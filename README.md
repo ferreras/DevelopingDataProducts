@@ -24,7 +24,7 @@ In mathematics, a [<u>Lissajous Curve</u>](https://en.wikipedia.org/wiki/Lissajo
         
 which describe complex harmonic motion. This family of curves was investigated by Nathaniel Bowditch in 1815, and later in more detail by Jules Antoine Lissajous in 1857.
 
-![Example of a Lissajous Curve](Oszilloskop.jpg)
+![Example of a Lissajous Curve](http://upload.wikimedia.org/wikipedia/commons/4/46/Lissajous-Figur_1_zu_3_%28Oszilloskop%29.jpg)
 
 )
 
@@ -46,4 +46,4 @@ Instructions
 A look to the application
 ========================================================
 
-![alt text](ApplicationImage.PNG)
+![alt text](https://lh4.googleusercontent.com/Ws19wTK7VkdiO6LlKIginMIHidX7sDu-EN3w4sd0h_xsz1oyiaSuj1T6aya1neaG_y4zrr95XLM=w1323-h452)
