@@ -1,6 +1,6 @@
 library(shiny)
 
-npoints <- 100
+npoints <- 200
 t <- c(0:(npoints-1))/(npoints)
 
 shinyServer(
@@ -16,31 +16,20 @@ shinyServer(
         })
         output$curve <- renderPlot({ 
             
-            # Movement
-            invalidateLater(100,session)
+            # Movement (each 500 ms let's change phi)
+            # More speed causes problems in the server
+            invalidateLater(500,session)
 
             # Shift the curve
             auxiliar <- y[1]
-            for (i in 1:npoints) {
-                y[i] <<- y[i+1]
-            }
-            
+            for (i in 1:npoints) y[i] <<- y[i+1]
             y[npoints+1] <<- y[1]
             
-            
-            # Close the curve
-            
-            plot(x,y, asp= 1,
-                 type = input$type,
-                 pch = input$pch,
-                 lty = as.numeric(input$lty),
-                 family=input$family,
-                 bty = input$bty,
-                 main = "Main Text",
-                 xlab = "X Label",
-                 ylab = "Y Label",
-                 las = input$las
-            )
+            # Let's plot
+            plot(x, y, asp= 1, type = input$type, pch = input$pch,
+                 cex = input$cex, lwd = input$lwd, col=input$col,
+                 lty = as.numeric(input$lty), bty = input$bty,
+                 main = "Lissajous Curves", xlab = "X Axis", ylab = "Y Axis")
         })
     }
 )
