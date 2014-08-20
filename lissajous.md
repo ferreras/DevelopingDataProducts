@@ -1,14 +1,14 @@
 Lissajous Curve
 ========================================================
 author: Antonio Ferreras
-date: Sun Aug 17 18:53:11 2014
+date: Sun Aug 17 19:15:00 2014
 transition: rotate
 
 <small>
 Coursera Makening Presentation
 Data Assignment
 </small>
-First Slide
+2 Slide
 ========================================================
 
 For more details on authoring R presentations click the
@@ -18,7 +18,7 @@ For more details on authoring R presentations click the
 - Bullet 2
 - Bullet 3
 
-Slide With Code
+3 Slide With Code
 ========================================================
 
 
@@ -36,7 +36,12 @@ summary(cars)
  Max.   :25.0   Max.   :120  
 ```
 
-Slide With Plot
+![plot of chunk unnamed-chunk-2](lissajous-figure/unnamed-chunk-2.png) 
+
+4 Slide With Plot
 ========================================================
 
-![plot of chunk unnamed-chunk-2](lissajous-figure/unnamed-chunk-2.png) 
+![alt text](ApplicationImage.PNG)
+
+5 Slide With Plot
+========================================================

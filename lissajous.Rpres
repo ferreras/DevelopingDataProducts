@@ -8,7 +8,7 @@ transition: rotate
 Coursera Makening Presentation
 Data Assignment
 </small>
-First Slide
+2 Slide
 ========================================================
 
 For more details on authoring R presentations click the
@@ -18,16 +18,21 @@ For more details on authoring R presentations click the
 - Bullet 2
 - Bullet 3
 
-Slide With Code
+3 Slide With Code
 ========================================================
 
 ```{r}
 summary(cars)
 ```
 
-Slide With Plot
-========================================================
-
 ```{r, echo=FALSE}
 plot(cars)
 ```
+
+4 Slide With Plot
+========================================================
+
+![alt text](ApplicationImage.PNG)
+
+5 Slide With Plot
+========================================================
