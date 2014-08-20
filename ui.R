@@ -12,7 +12,7 @@ shinyUI(fluidPage(
                                      "overplotted" = "o",
                                      "histogram" ="h",
                                      "stair steps" = "s"),
-                        selected = "p"),
+                        selected = "l"),
             selectInput("lty", label = p("Line type"), 
                         choices=list("solid"= 1,
                                      "dashed" = 2,
@@ -21,12 +21,11 @@ shinyUI(fluidPage(
                                      "longdash" = 5,
                                      "twodash" = 6),
                         selected = 1),
-            selectInput("family", label = "Family", 
-                        choices=list("default"= "",
-                                     "serif" = "serif",
+            selectInput("family", label = "Font Family", 
+                        choices=list("serif" = "serif",
+                                     "sans" = "sans",
                                      "script" = "script",
-                                     "mono" = "mono",
-                                     "serif" = "serif"),
+                                     "mono" = "mono"),
                         selected = 1),
             
             selectInput("bty", label = p("Box type"), 
@@ -53,18 +52,12 @@ shinyUI(fluidPage(
         mainPanel(
             plotOutput("curve"),
             sliderInput('w1', 'w1', value = 2, min = 1, max = 10, step = 1),
-            sliderInput('w2', 'w2', value = 2, min = 1, max = 10, step = 1),
+            sliderInput('w2', 'w2', value = 1, min = 1, max = 10, step = 1),
             sliderInput('phi', 'phi',value = 0, min = 0, max = pi, step = pi/40),
             p('Output text1'),
             textOutput('lty'),
             p('Output text2'),
-            textOutput('type'),
-            p('Output text3'),
-            textOutput('text3'),
-            p('Outside text'),
-            textOutput('text4'),
-            p('Inside text, but non-reactive'),
-            textOutput('text5')
+            textOutput('type')
         )
     )
 ))

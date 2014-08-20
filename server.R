@@ -1,22 +1,35 @@
 library(shiny)
 
 npoints <- 100
-t <- c(0:npoints-1)/npoints
-w1 = 2
-w2 = 5
-x = sin(2*pi*w1*t)
-y = cos(2*pi*w2*t)
-
-
-    
+t <- c(0:(npoints-1))/(npoints)
 
 shinyServer(
+    
     function(input, output, session) {
+        observe({
+            x <<- sin(2*pi*input$w1*t)
+            x[npoints+1] <<- x[1]
+        })
+        observe({
+            y <<- sin(2*pi*input$w2*t)
+            y[npoints+1] <<- y[1]
+        })
         output$curve <- renderPlot({ 
-            x = sin(2*pi*input$w1*t)
-            y = cos(2*pi*input$w2*t+input$phi)
-            x <- jitter(x)
-            y <- jitter(y)
+            
+            # Movement
+            invalidateLater(100,session)
+
+            # Shift the curve
+            auxiliar <- y[1]
+            for (i in 1:npoints) {
+                y[i] <<- y[i+1]
+            }
+            
+            y[npoints+1] <<- y[1]
+            
+            
+            # Close the curve
+            
             plot(x,y, asp= 1,
                  type = input$type,
                  pch = input$pch,
@@ -27,18 +40,7 @@ shinyServer(
                  xlab = "X Label",
                  ylab = "Y Label",
                  las = input$las
-                )
+            )
         })
-        phi <- renderText({
-            invalidateLater(1000, session)
-            phi <- phi +1
-            phi
-        })
-#        y <<- y + 1
-#        output$text1 <- renderText({input$type})
-#        output$text2 <- renderText({input$text2})
-#        output$text3 <- renderText({as.numeric(input$text1)+1})
-#         output$text4 <- renderText(type1)
-#         output$text5 <- renderText(lty1)
     }
 )
